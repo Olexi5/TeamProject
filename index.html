@@ -11,14 +11,42 @@
     <header class="header"></header>
     <main>
       <section class="year">
-        <h2 class="section-title"></h2>
+        <h2 class="section-title">Перевір в який рік ти народився</h2>
         <form action="" class="year-form">
-          <input type="text" class="year-input" /><button
-            class="year-submit"
-            type="submit"
-          ></button>
+          <input
+            type="text"
+            class="year-input"
+            placeholder="Введіть рік народження"
+            name="year"
+          />
+          <button class="year-submit" type="submit"></button>
         </form>
         <p class="year-output"></p>
+      </section>
+      <section class="rps">
+        <h2 class="section title">Камінь - ножиці - папір</h2>
+        <ul class="rps-list">
+          <li class="rps-item">
+            <button type="button" class="rps-choice" name="1">
+              <img src="./images/stone.png" alt="" class="rps-img" name="1"/>
+            </button>
+          </li>
+          <li class="rps-item">
+            <button type="button" class="rps-choice" name="2">
+              <img src="./images/scissors.png" alt="" class="rps-img" name="2"/>
+            </button>
+          </li>
+          <li class="rps-item">
+            <button type="button" class="rps-choice" name="3">
+              <img src="./images/paper.png" alt="" class="rps-img" name="3"/>
+            </button>
+          </li>
+        </ul>
+        <p class="rps-stats">
+          Рахунок: Комп’ютер - <span class="comp-stats">0</span>Ви - <span class="your-stats">0</span>
+        </p>
+        <p class="rps-output"></p>
+        <button type="button" class="rps-comp">Варіант комп’ютера</button>
       </section>
     </main>
     <footer class="footer"></footer>
