@@ -13,8 +13,8 @@ yearForm.addEventListener("submit", (e) => {
 //rps
 const rpsList = document.querySelector(".rps-list");
 const rpsOutput = document.querySelector(".rps-output");
-let compStats = 0
-let yourStats = 0
+let compStats = 0;
+let yourStats = 0;
 const rpsBtn = document.querySelector(".rps-comp");
 let choice = 0;
 let comp = 0;
@@ -32,12 +32,12 @@ rpsList.addEventListener("click", (e) => {
     (choice == 3 && comp === 1)
   ) {
     rpsOutput.textContent = "Ви виграли раунд!";
-    yourStats+=1
-    document.querySelector(".your-stats").textContent = yourStats
+    yourStats += 1;
+    document.querySelector(".your-stats").textContent = yourStats;
   } else {
     rpsOutput.textContent = "Комп'ютер виграв раунд!";
     compStats += 1;
-    document.querySelector(".comp-stats").textContent = compStats
+    document.querySelector(".comp-stats").textContent = compStats;
   }
 });
 rpsBtn.addEventListener("click", (e) => {
@@ -46,4 +46,38 @@ rpsBtn.addEventListener("click", (e) => {
       btn.style.backgroundColor = "red";
     }
   }
+});
+//calc
+const calcForm = document.querySelector(".calc-form");
+const calcList = document.querySelector(".calc-list");
+const calcOutput = document.querySelector(".calc-output");
+let oper = "";
+calcList.addEventListener("click", (e) => {
+  oper = e.target.textContent;
+});
+calcForm.addEventListener("submit", (e) => {
+  e.preventDefault()
+  const elem = e.currentTarget.elements;
+  const a = Number(elem.num1.value)
+  const b = Number(elem.num2.value)
+  let output = 0;
+  switch (oper) {
+    case "+":
+      output = a + b;
+      break;
+    case "-":
+      output = a - b;
+      break;
+    case "*":
+      output = a * b;
+      break;
+    case "/":
+      if (b === 0) {
+        output = "На нуль ділити не можна";
+        break;
+      }
+      output = a / b;
+      break;
+  }
+  calcOutput.textContent = output;
 });
