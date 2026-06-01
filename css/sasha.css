@@ -1,0 +1,31 @@
+.dino{
+    position: relative;
+    background-image: url(../images/dino-back.png);
+    background-size: contain;
+    background-position: bottom;
+
+}
+.dino-output{
+    padding-bottom: 140px;
+}
+.dino-char-img{
+    width: 50px;
+    height: 50px;
+}
+.dino-char{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    transform: translateY(-55px);
+    left: 50px;
+}
+.dino-cactus{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 190px;
+    right: 0;
+}
+.dino-cactus-img{
+    height: 30px;
+}
