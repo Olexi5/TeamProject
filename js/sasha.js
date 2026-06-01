@@ -56,10 +56,10 @@ calcList.addEventListener("click", (e) => {
   oper = e.target.textContent;
 });
 calcForm.addEventListener("submit", (e) => {
-  e.preventDefault()
+  e.preventDefault();
   const elem = e.currentTarget.elements;
-  const a = Number(elem.num1.value)
-  const b = Number(elem.num2.value)
+  const a = Number(elem.num1.value);
+  const b = Number(elem.num2.value);
   let output = 0;
   switch (oper) {
     case "+":
@@ -81,3 +81,28 @@ calcForm.addEventListener("submit", (e) => {
   }
   calcOutput.textContent = output;
 });
+//dino
+const dino = document.querySelector(".dino-char");
+const cactus = document.querySelector(".dino-cactus");
+const speed = 6;
+let positionX = 0;
+const target = screen.availWidth;
+function move() {
+  if (positionX < target) {
+    positionX += speed;
+    cactus.style.transform = `translate(-${positionX}px)`;
+    requestAnimationFrame(move);
+  }
+}
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Space") {
+    requestAnimationFrame(move);
+  }
+});
+document.addEventListener("click", (e) => {
+  dino.style.transform = "translateY(-105px)";
+  setTimeout(() => {
+    dino.style.transform = "translateY(-55px)";
+  }, 200);
+});
+
