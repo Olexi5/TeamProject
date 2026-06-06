@@ -82,27 +82,72 @@ calcForm.addEventListener("submit", (e) => {
   calcOutput.textContent = output;
 });
 //dino
+// const dino = document.querySelector(".dino-char");
+// const rectDino = dino.getBoundingClientRect();
+// const cactus = document.querySelector(".dino-cactus");
+// const rectCactus = cactus.getBoundingClientRect();
+// const speed = 6;
+// let positionX = 0;
+// let anim;
+// const target = screen.availWidth;
+// function move() {
+//   if (positionX < target) {
+//     positionX += speed;
+//     cactus.style.transform = `translate(-${positionX}px)`;
+//     anim = requestAnimationFrame(move);
+//   }
+// }
+// document.addEventListener("keydown", (e) => {
+//   if (e.code === "Space") {
+//     anim = requestAnimationFrame(move);
+//     document.addEventListener("click", (e) => {
+//       dino.style.transform = "translateY(-105px)";
+//       setTimeout(() => {
+//         dino.style.transform = "translateY(-55px)";
+//       }, 200);
+//     });
+//   }
+// });
 const dino = document.querySelector(".dino-char");
 const cactus = document.querySelector(".dino-cactus");
-const speed = 6;
+const speed = 7
 let positionX = 0;
+let anim;
+let isPlaying = false;
 const target = screen.availWidth;
 function move() {
   if (positionX < target) {
     positionX += speed;
     cactus.style.transform = `translate(-${positionX}px)`;
-    requestAnimationFrame(move);
+    const currentDino = dino.getBoundingClientRect();
+    const currentCactus = cactus.getBoundingClientRect();
+    const buffer = 20
+    if (
+      currentDino.left + buffer < currentCactus.right &&
+      currentDino.right - buffer > currentCactus.left &&
+      currentDino.top + buffer < currentCactus.bottom &&
+      currentDino.bottom - buffer > currentCactus.top
+    ) {
+      cancelAnimationFrame(anim);
+      isPlaying = false;
+      return;
+    }
+    anim = requestAnimationFrame(move);
+  }else{
+    cactus.style.transform = "translate(15px)";
+    positionX = 0
+    anim = requestAnimationFrame(move);
   }
 }
 document.addEventListener("keydown", (e) => {
   if (e.code === "Space") {
-    requestAnimationFrame(move);
+    if (!isPlaying) {
+      isPlaying = true;
+      anim = requestAnimationFrame(move);
+    }
+    dino.style.transform = "translateY(-105px)";
+    setTimeout(() => {
+      dino.style.transform = "translateY(-55px)";
+    }, 200);
   }
 });
-document.addEventListener("click", (e) => {
-  dino.style.transform = "translateY(-105px)";
-  setTimeout(() => {
-    dino.style.transform = "translateY(-55px)";
-  }, 200);
-});
-
