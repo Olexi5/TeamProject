@@ -1,3 +1,9 @@
+.body{
+    scrollbar-width: none;
+}
+.rps-choice{
+    background-color: black;
+}
 .dino{
     position: relative;
     background-image: url(../images/dino-back.png);
