@@ -82,32 +82,6 @@ calcForm.addEventListener("submit", (e) => {
   calcOutput.textContent = output;
 });
 //dino
-// const dino = document.querySelector(".dino-char");
-// const rectDino = dino.getBoundingClientRect();
-// const cactus = document.querySelector(".dino-cactus");
-// const rectCactus = cactus.getBoundingClientRect();
-// const speed = 6;
-// let positionX = 0;
-// let anim;
-// const target = screen.availWidth;
-// function move() {
-//   if (positionX < target) {
-//     positionX += speed;
-//     cactus.style.transform = `translate(-${positionX}px)`;
-//     anim = requestAnimationFrame(move);
-//   }
-// }
-// document.addEventListener("keydown", (e) => {
-//   if (e.code === "Space") {
-//     anim = requestAnimationFrame(move);
-//     document.addEventListener("click", (e) => {
-//       dino.style.transform = "translateY(-105px)";
-//       setTimeout(() => {
-//         dino.style.transform = "translateY(-55px)";
-//       }, 200);
-//     });
-//   }
-// });
 const dino = document.querySelector(".dino-char");
 const cactus = document.querySelector(".dino-cactus");
 const speed = 7
