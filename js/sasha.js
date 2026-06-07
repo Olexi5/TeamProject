@@ -84,11 +84,14 @@ calcForm.addEventListener("submit", (e) => {
 //dino
 const dino = document.querySelector(".dino-char");
 const cactus = document.querySelector(".dino-cactus");
-const speed = 7;
+let speed = 7;
+const dinoOutput = document.querySelector(".dino-output");
+const dinoRetry = document.querySelector(".dino-retry");
 let positionX = 0;
 let anim;
 let isPlaying = false;
 const target = screen.availWidth;
+
 function move() {
   if (positionX < target) {
     positionX += speed;
@@ -104,24 +107,55 @@ function move() {
     ) {
       cancelAnimationFrame(anim);
       isPlaying = false;
+      dinoOutput.textContent = "Game Over";
+      dinoRetry.style.display = "block";
       return;
     }
     anim = requestAnimationFrame(move);
   } else {
-    cactus.style.transform = "translate(15px)";
+    cactus.style.transform = "translate(0px)";
+    speed+=1
+    if(cactus.firstChild.style.height === '40px'){
+      cactus.lastChild.style.height = '40px';
+    }else if (cactus.childElementCount >= 2) {
+      cactus.firstChild.style.height = '40px';
+      cactus.style.top = "150px"
+    } else {
+      cactus.insertAdjacentHTML(
+        "beforeend",
+        '<img src="./images/cactus.png" alt="" class="dino-cactus-img">',
+      );
+    }
     positionX = 0;
     anim = requestAnimationFrame(move);
   }
 }
+
 document.addEventListener("keydown", (e) => {
   if (e.code === "Space") {
+    if (dinoOutput.textContent === "Game Over") return;
+
     if (!isPlaying) {
       isPlaying = true;
       anim = requestAnimationFrame(move);
     }
-    dino.style.transform = "translateY(-105px)";
+    dino.style.transform = "translateY(-135px)";
     setTimeout(() => {
-      dino.style.transform = "translateY(-55px)";
+      dino.style.transform = "translateY(-85px)";
     }, 200);
+  }
+});
+
+dinoRetry.addEventListener("click", () => {
+  if (!isPlaying) {
+    cactus.innerHTML =
+      '<img src="./images/cactus.png" alt="" class="dino-cactus-img">';
+
+    cactus.style.transform = "translate(0px)";
+    positionX = 0;
+    isPlaying = true;
+    anim = requestAnimationFrame(move);
+    dinoRetry.style.display = "none";
+    dinoOutput.textContent = "Press space to jump";
   }
 });

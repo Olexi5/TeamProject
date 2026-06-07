@@ -3,17 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <title>Mini-Thinking games</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/sasha.css" />
     <link rel="stylesheet" href="./css/valentyn/valentyn.scss" />
   </head>
   <body>
     <header class="header"></header>
     <main>
-      <section class="year">
+      <section class="section year">
         <h2 class="section-title">Перевір в який рік ти народився</h2>
         <form action="" class="year-form">
           <input
@@ -26,59 +29,87 @@
         </form>
         <p class="year-output"></p>
       </section>
-      <section class="guess-number">
+      <section class="section guess-number">
         <h2 class="section-title">Вгадай число, яке загадав комп’ютер</h2>
         <form action="" class="guess-number-form">
           <input
-            type="text"
+            type="number"
             class="guess-number-input"
             placeholder="Введіть число"
             name="guessNumber"
-            
           />
           <button class="guess-number-submit" type="submit"></button>
         </form>
         <p class="guess-number-result"></p>
       </section>
-      <section class="rps">
+      <section class="section rps">
         <h2 class="section title">Камінь - ножиці - папір</h2>
         <ul class="rps-list">
           <li class="rps-item">
             <button type="button" class="rps-choice" name="1">
-              <img src="./images/stone.png" alt="" class="rps-img" name="1"/>
+              <img src="./images/stone.png" alt="" class="rps-img" name="1" />
             </button>
           </li>
           <li class="rps-item">
             <button type="button" class="rps-choice" name="2">
-              <img src="./images/scissors.png" alt="" class="rps-img" name="2"/>
+              <img
+                src="./images/scissors.png"
+                alt=""
+                class="rps-img"
+                name="2"
+              />
             </button>
           </li>
           <li class="rps-item">
             <button type="button" class="rps-choice" name="3">
-              <img src="./images/paper.png" alt="" class="rps-img" name="3"/>
+              <img src="./images/paper.png" alt="" class="rps-img" name="3" />
             </button>
           </li>
         </ul>
         <p class="rps-stats">
-          Рахунок: Комп’ютер - <span class="comp-stats">0</span>Ви - <span class="your-stats">0</span>
+          Рахунок: Комп’ютер - <span class="comp-stats">0</span>Ви -
+          <span class="your-stats">0</span>
         </p>
         <p class="rps-output"></p>
         <button type="button" class="rps-comp">Варіант комп’ютера</button>
       </section>
-      <section class="calc">
+      <section class="section calc">
         <h2 class="section-title">Калькулятор</h2>
         <form action="" class="calc-form">
-          <input type="text" class="calc-first" name="num1" placeholder="Введіть число">
+          <input
+            type="text"
+            class="calc-first"
+            name="num1"
+            placeholder="Введіть число"
+          />
           <ul class="calc-list">
             <li class="calc-item"><button type="button">+</button></li>
             <li class="calc-item"><button type="button">*</button></li>
             <li class="calc-item"><button type="button">-</button></li>
             <li class="calc-item"><button type="button">/</button></li>
           </ul>
-          <input type="text" class="calc-second" name="num2" placeholder="Введіть число">
+          <input
+            type="text"
+            class="calc-second"
+            name="num2"
+            placeholder="Введіть число"
+          />
           <button type="submit" class="calc-submit">=</button>
         </form>
         <p class="calc-output">Результат</p>
+      </section>
+      <section class="section time-calculator">
+        <h2 class="section title">Калькулятор часу</h2>
+        <form action="" class="time-calculator-form">
+          <input
+            type="number"
+            class="time-calculator-input"
+            placeholder="Введіть секунди"
+            name="timeCalculator"
+          />
+          <button type="submit">тимчасово</button>
+        </form>
+        <p class="time-calculator-output"></p>
       </section>
       <section class="dino">
         <h2 class="dino-title">Google динозавр</h2>
