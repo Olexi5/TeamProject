@@ -114,12 +114,12 @@ function move() {
     anim = requestAnimationFrame(move);
   } else {
     cactus.style.transform = "translate(0px)";
-    speed+=1
-    if(cactus.firstChild.style.height === '40px'){
-      cactus.lastChild.style.height = '40px';
-    }else if (cactus.childElementCount >= 2) {
-      cactus.firstChild.style.height = '40px';
-      cactus.style.top = "150px"
+    speed += 1;
+    if (cactus.firstChild.style.height === "40px") {
+      cactus.lastChild.style.height = "40px";
+    } else if (cactus.childElementCount >= 2) {
+      cactus.firstChild.style.height = "40px";
+      cactus.style.top = "150px";
     } else {
       cactus.insertAdjacentHTML(
         "beforeend",
@@ -157,5 +157,30 @@ dinoRetry.addEventListener("click", () => {
     anim = requestAnimationFrame(move);
     dinoRetry.style.display = "none";
     dinoOutput.textContent = "Press space to jump";
+  }
+});
+//TEAM
+const teamList = document.querySelector(".team-list");
+const forw = document.querySelector(".team-forw");
+const back = document.querySelector(".team-back");
+let first = 0;
+console.log(teamList.scrollLeft);
+forw.addEventListener("click", () => {
+  teamList.scroll({ left: 330, behavior: "smooth" });
+  console.log(teamList.scrollLeft);
+  if (first == teamList.scrollLeft) {
+    teamList.scroll({left:0, behavior:"instant"})
+    first = 0;
+  } else {
+    first = teamList.scrollLeft;
+  }
+});
+back.addEventListener("click", () => {
+  teamList.scroll({left:0, behavior:"smooth"})
+  if (first == teamList.scrollLeft) {
+    teamList.scroll({ left: 330, behavior: "instant" });
+    first = teamList.scrollLeft;
+  } else {
+    first = 0
   }
 });
