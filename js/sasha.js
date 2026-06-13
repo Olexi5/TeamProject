@@ -117,7 +117,7 @@ function move() {
     speed += 1;
     if (cactus.firstChild.style.height === "40px") {
       cactus.lastChild.style.height = "40px";
-    } else if (cactus.childElementCount >= 2) {
+    } else if (cactus.childElementCount >= 3) {
       cactus.firstChild.style.height = "40px";
       cactus.style.top = "150px";
     } else {
@@ -169,18 +169,38 @@ forw.addEventListener("click", () => {
   teamList.scroll({ left: 330, behavior: "smooth" });
   console.log(teamList.scrollLeft);
   if (first == teamList.scrollLeft) {
-    teamList.scroll({left:0, behavior:"instant"})
+    teamList.scroll({ left: 0, behavior: "instant" });
     first = 0;
   } else {
     first = teamList.scrollLeft;
   }
 });
 back.addEventListener("click", () => {
-  teamList.scroll({left:0, behavior:"smooth"})
+  teamList.scroll({ left: 0, behavior: "smooth" });
   if (first == teamList.scrollLeft) {
     teamList.scroll({ left: 330, behavior: "instant" });
     first = teamList.scrollLeft;
   } else {
-    first = 0
+    first = 0;
   }
+});
+//modal
+const backdropFirst = document.querySelector("div[data-modal]");
+const closeBtnFirst = document.querySelector("button[data-modal-close]");
+const backdropSecond = document.querySelector(".sec-backdrop");
+const closeBtnSecond = document.querySelector(".sec-close-btn");
+closeBtnFirst.addEventListener("click", () => {
+  backdropFirst.classList.add("is-hidden");
+  backdropSecond.classList.toggle("is-hidden");
+});
+closeBtnSecond.addEventListener("click", () => {
+  backdropSecond.classList.add("is-hidden");
+  document.body.classList.toggle("no-scroll");
+});
+//modal input
+const modalForm = document.querySelector(".modal-form");
+const outputText = document.querySelector(".header-text").querySelector("span");
+modalForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  outputText.textContent = e.currentTarget.elements.name.value || "User"
 });
