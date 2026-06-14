@@ -6,8 +6,10 @@ yearForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (elements.year.value % 4 === 0) {
     yearOutput.textContent = "Ви народилися у високосний рік!";
+    yearOutput.classList.add("output-green")
   } else {
     yearOutput.textContent = "Ви народилися не у високосний рік!";
+    yearOutput.classList.add("output-red");
   }
 });
 //rps
@@ -20,7 +22,7 @@ let choice = 0;
 let comp = 0;
 rpsList.addEventListener("click", (e) => {
   for (let btn of document.querySelectorAll(".rps-choice")) {
-    btn.style.backgroundColor = "black";
+    btn.classList.remove("rps-red")
   }
   comp = Math.floor(Math.random() * 3) + 1;
   choice = e.target.name;
@@ -43,7 +45,7 @@ rpsList.addEventListener("click", (e) => {
 rpsBtn.addEventListener("click", (e) => {
   for (let btn of document.querySelectorAll(".rps-choice")) {
     if (btn.name == comp) {
-      btn.style.backgroundColor = "red";
+      btn.classList.add("rps-red")
     }
   }
 });

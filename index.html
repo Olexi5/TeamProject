@@ -10,10 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/sasha.css" />
     <link rel="stylesheet" href="./css/valentyn/valentyn.scss" />
   </head>
-  <body class="no-scroll">
+  <body class="no-scroll container">
     <header class="header">
       <a href="" class="header-logo"></a>
       <ul class="header-list"></ul>
@@ -22,15 +23,16 @@
     </header>
     <main>
       <div class="backdrop" data-modal>
-        <div class="container modal">
+        <div class="modal">
           <button type="button" class="close-btn" data-modal-close>
             <img class="modal-close" src="./images/cross.png" alt="" />
           </button>
-          <p class="modal-text">
-            Привіт! Ви потрапили на сайт інтерактивних ігор та завдань
-            Надіємось, що вам сподобається і ви отримаєте позитивні емоції!
-            Бажаємо Вам гарно провести час!
-          </p>
+          <div class="text">
+          <p class="modal-text">Привіт!</p>
+          <p class="modal-text">Ви потрапили на сайт інтерактивних ігор та завдань</p>
+          <p class="modal-text">Сподіваємось, що вам сподобається і ви отримаєте позитивні емоції!</p>
+          <p class="modal-text">Бажаємо Вам гарно провести час!</p>
+          </div>
           <form action="" class="modal-form">
             <label for="" class="modal-label">Введіть своє ім’я:</label
             ><input
@@ -41,26 +43,27 @@
             />
             <button class="modal-submit" type="submit">Зберегти</button>
           </form>
-          <img src="./images/sword.png" class="modal-img1" alt="">
-          <img src="./images/puzzle.png" class="modal-img2" alt="">
-          <img src="./images/game-development.png" class="modal-img3" alt="">
-          <img src="./images/tic-tac-toe.png" class="modal-img4" alt="">
+          <img src="./images/sword.png" class="modal-img1" alt="" />
+          <img src="./images/puzzle.png" class="modal-img2" alt="" />
+          <img src="./images/game-development.png" class="modal-img3" alt="" />
+          <img src="./images/tic-tac-toe.png" class="modal-img4" alt="" />
         </div>
       </div>
       <div class="backdrop sec-backdrop is-hidden">
-        <div class="container modal sec-modal">
+        <div class="modal sec-modal">
           <button type="button" class="sec-close-btn close-btn">
             <img class="modal-close" src="./images/cross.png" alt="" />
           </button>
           <p class="sec-modal-text">Дякую за підписку!</p>
-          <img src="./images/sword.png" class="modal-img1" alt="">
-          <img src="./images/puzzle.png" class="modal-img2" alt="">
-          <img src="./images/game-development.png" class="modal-img3" alt="">
-          <img src="./images/tic-tac-toe.png" class="modal-img4" alt="">
+          <img src="./images/sword.png" class="sec-modal-img1" alt="" />
+          <img src="./images/puzzle.png" class="sec-modal-img2" alt="" />
+          <img src="./images/game-development.png" class="sec-modal-img3" alt="" />
+          <img src="./images/tic-tac-toe.png" class="sec-modal-img4" alt="" />
         </div>
       </div>
       <section class="section year">
         <h2 class="section-title">Перевір в який рік ти народився</h2>
+        <div class="year-game">
         <form action="" class="year-form">
           <input
             type="text"
@@ -68,9 +71,10 @@
             placeholder="Введіть рік народження"
             name="year"
           />
-          <button class="year-submit" type="submit"></button>
+          <button class="year-submit" type="submit"><img src="./images/submit.png" alt="" class="year-submit-img"></button>
         </form>
         <p class="year-output"></p>
+        </div>
       </section>
       <section class="section guess-number">
         <h2 class="section-title">Вгадай число, яке загадав комп’ютер</h2>
@@ -86,7 +90,7 @@
         <p class="guess-number-result"></p>
       </section>
       <section class="section rps">
-        <h2 class="section title">Камінь - ножиці - папір</h2>
+        <h2 class="section-title">Камінь - ножиці - папір</h2>
         <ul class="rps-list">
           <li class="rps-item">
             <button type="button" class="rps-choice" name="1">
@@ -142,7 +146,7 @@
         <p class="calc-output">Результат</p>
       </section>
       <section class="section time-calculator">
-        <h2 class="section title">Калькулятор часу</h2>
+        <h2 class="section-title">Калькулятор часу</h2>
         <form action="" class="time-calculator-form">
           <input
             type="number"
@@ -155,7 +159,7 @@
         <p class="time-calculator-output"></p>
       </section>
       <section class="dino">
-        <h2 class="dino-title">Google динозавр</h2>
+        <h2 class="section-title dino-title">Google динозавр</h2>
         <p class="dino-output">Press space to start</p>
         <div class="dino-char">
           <img src="./images/dino.png" alt="" class="dino-char-img" />
@@ -168,7 +172,7 @@
         </button>
       </section>
       <section class="team">
-        <h2 class="team-title">Наша команда</h2>
+        <h2 class="section-title">Наша команда</h2>
         <button type="button" class="team-back">backward</button>
         <ul class="team-list">
           <li class="team-item">
