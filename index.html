@@ -91,6 +91,7 @@
       </section>
       <section class="section rps">
         <h2 class="section-title">Камінь - ножиці - папір</h2>
+        <div class="rps-game">
         <ul class="rps-list">
           <li class="rps-item">
             <button type="button" class="rps-choice" name="1">
@@ -114,9 +115,10 @@
           </li>
         </ul>
         <p class="rps-stats">
-          Рахунок: Комп’ютер - <span class="comp-stats">0</span>Ви -
+          Рахунок: Комп’ютер - <span class="comp-stats">0</span> Ви -
           <span class="your-stats">0</span>
         </p>
+        </div>
         <p class="rps-output"></p>
         <button type="button" class="rps-comp">Варіант комп’ютера</button>
       </section>
@@ -125,25 +127,25 @@
         <form action="" class="calc-form">
           <input
             type="text"
-            class="calc-first"
+            class="calc-input"
             name="num1"
             placeholder="Введіть число"
           />
           <ul class="calc-list">
-            <li class="calc-item"><button type="button">+</button></li>
-            <li class="calc-item"><button type="button">*</button></li>
-            <li class="calc-item"><button type="button">-</button></li>
-            <li class="calc-item"><button type="button">/</button></li>
+            <li class="calc-item"><button class="calc-btn" type="button">+</button></li>
+            <li class="calc-item"><button class="calc-btn" type="button">*</button></li>
+            <li class="calc-item"><button class="calc-btn" type="button">-</button></li>
+            <li class="calc-item"><button class="calc-btn" type="button">/</button></li>
           </ul>
           <input
             type="text"
-            class="calc-second"
+            class="calc-input"
             name="num2"
             placeholder="Введіть число"
           />
           <button type="submit" class="calc-submit">=</button>
+          <p class="calc-output">Результат</p>
         </form>
-        <p class="calc-output">Результат</p>
       </section>
       <section class="section time-calculator">
         <h2 class="section-title">Калькулятор часу</h2>

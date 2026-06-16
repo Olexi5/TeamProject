@@ -11,6 +11,7 @@ yearForm.addEventListener("submit", (e) => {
     yearOutput.textContent = "Ви народилися не у високосний рік!";
     yearOutput.classList.add("output-red");
   }
+  yearForm.style.marginRight = "140px"
 });
 //rps
 const rpsList = document.querySelector(".rps-list");
@@ -28,16 +29,25 @@ rpsList.addEventListener("click", (e) => {
   choice = e.target.name;
   if (comp == choice) {
     rpsOutput.textContent = "Нічия";
+    rpsOutput.classList.remove("output-green");
+    rpsOutput.classList.remove("output-red");
+    rpsOutput.classList.add("output-black")
   } else if (
     (choice == 1 && comp === 2) ||
     (choice == 2 && comp === 3) ||
     (choice == 3 && comp === 1)
   ) {
     rpsOutput.textContent = "Ви виграли раунд!";
+    rpsOutput.classList.add("output-green");
+    rpsOutput.classList.remove("output-red");
+    rpsOutput.classList.remove("output-black");
     yourStats += 1;
     document.querySelector(".your-stats").textContent = yourStats;
   } else {
     rpsOutput.textContent = "Комп'ютер виграв раунд!";
+    rpsOutput.classList.remove("output-green");
+    rpsOutput.classList.add("output-red");
+    rpsOutput.classList.remove("output-black");
     compStats += 1;
     document.querySelector(".comp-stats").textContent = compStats;
   }
