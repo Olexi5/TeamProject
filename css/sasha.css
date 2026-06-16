@@ -51,6 +51,12 @@
 }
 .dino-output {
   padding-bottom: 140px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 .dino-char-img {
   width: 50px;
@@ -60,7 +66,7 @@
   display: block;
   position: absolute;
   z-index: 2;
-  transform: translateY(-85px);
+  transform: translateY(-75px);
   left: 50px;
 }
 .dino-cactus {
@@ -68,7 +74,7 @@
   align-items: flex-end;
   position: absolute;
   z-index: 1;
-  top: 160px;
+  top: 190px;
   right: 0;
 }
 .dino-cactus-img {
@@ -78,7 +84,11 @@
   transform: translate(-50%, -50%);
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 150px;
+  padding: 3px 4px 2px;
+  background-color: var(--black-color);
+  border: none;
+  border-radius: 7px;
   display: none;
 }
 .dino-retry > img {
@@ -117,9 +127,10 @@
   position: absolute;
   background-color: var(--white-color);
   transform: translate(-50%, -50%);
-  left: 935px;
+  left: 960px;
   top: 400px;
   padding: 46px 92px 47px 92px;
+  border-radius: 16px;
 }
 .sec-modal {
   padding: 83px 137px 138px;
@@ -384,7 +395,7 @@
 }
 .calc-btn {
   padding: 5px 10px;
-  font-family:" Montserrat Alternates", sans-serif;
+  font-family: " Montserrat Alternates", sans-serif;
   font-weight: 400;
   color: var(--white-color);
   font-size: 12px;
@@ -403,9 +414,9 @@
   width: 62px !important;
   gap: 10px;
 }
-.calc-submit{
+.calc-submit {
   padding: 5px 10px;
-  font-family:" Montserrat Alternates", sans-serif;
+  font-family: " Montserrat Alternates", sans-serif;
   font-weight: 400;
   color: var(--white-color);
   font-size: 12px;
