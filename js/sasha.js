@@ -102,7 +102,7 @@ const dinoRetry = document.querySelector(".dino-retry");
 let positionX = 0;
 let anim;
 let isPlaying = false;
-const target = screen.availWidth;
+const target = 600
 
 function move() {
   if (positionX < target) {
@@ -120,6 +120,8 @@ function move() {
       cancelAnimationFrame(anim);
       isPlaying = false;
       dinoOutput.textContent = "Game Over";
+      dinoOutput.classList.remove("output-black");
+      dinoOutput.classList.add("output-red")
       dinoRetry.style.display = "block";
       return;
     }
@@ -127,18 +129,18 @@ function move() {
   } else {
     cactus.style.transform = "translate(0px)";
     speed += 1;
-    if (cactus.firstChild.style.height === "40px") {
-      cactus.lastChild.style.height = "40px";
+    positionX = 0;
+    if (cactus.firstElementChild.style.height === "40px") {
+      cactus.lastElementChild.style.height = "40px";
     } else if (cactus.childElementCount >= 3) {
-      cactus.firstChild.style.height = "40px";
-      cactus.style.top = "150px";
+      cactus.firstElementChild.style.height = "40px";
+      cactus.style.top = "180px";
     } else {
       cactus.insertAdjacentHTML(
         "beforeend",
         '<img src="./images/cactus.png" alt="" class="dino-cactus-img">',
       );
     }
-    positionX = 0;
     anim = requestAnimationFrame(move);
   }
 }
@@ -151,9 +153,9 @@ document.addEventListener("keydown", (e) => {
       isPlaying = true;
       anim = requestAnimationFrame(move);
     }
-    dino.style.transform = "translateY(-135px)";
+    dino.style.transform = "translateY(-125px)";
     setTimeout(() => {
-      dino.style.transform = "translateY(-85px)";
+      dino.style.transform = "translateY(-75px)";
     }, 200);
   }
 });
@@ -169,6 +171,10 @@ dinoRetry.addEventListener("click", () => {
     anim = requestAnimationFrame(move);
     dinoRetry.style.display = "none";
     dinoOutput.textContent = "Press space to jump";
+    dinoOutput.classList.remove("output-red")
+    dinoOutput.classList.add("output-black")
+    cactus.style.top = "190px";
+    speed = 7
   }
 });
 //TEAM
