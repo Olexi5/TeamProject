@@ -62,3 +62,39 @@ function convertTime(e) {
     document.querySelector(".time-calculator-output").textContent = parts.join(", ");
 }
 minutesForm.addEventListener("submit", convertTime);
+
+
+
+// three-numbers
+
+const inputs = document.querySelectorAll(".three-numbers-input");
+const result = document.querySelector(".three-numbers-result");
+
+function findMax() {
+    let values = [];
+
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value !== "") {
+            values.push(Number(inputs[i].value));
+        }
+    }
+
+    if (values.length === 0) {
+        result.textContent = "Покищо ви ще не ввели число";
+        return;
+    }
+
+    let max = values[0];
+
+    for (let i = 1; i < values.length; i++) {
+        if (values[i] > max) {
+            max = values[i];
+        }
+    }
+
+    result.textContent = `Найбільше число, яке ви ввели - ${max}`;
+}
+
+for (let i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("input", findMax);
+}
