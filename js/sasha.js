@@ -6,12 +6,12 @@ yearForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (elements.year.value % 4 === 0) {
     yearOutput.textContent = "Ви народилися у високосний рік!";
-    yearOutput.classList.add("output-green")
+    yearOutput.classList.add("output-green");
   } else {
     yearOutput.textContent = "Ви народилися не у високосний рік!";
     yearOutput.classList.add("output-red");
   }
-  yearForm.style.marginRight = "140px"
+  yearForm.style.marginRight = "140px";
 });
 //rps
 const rpsList = document.querySelector(".rps-list");
@@ -23,7 +23,7 @@ let choice = 0;
 let comp = 0;
 rpsList.addEventListener("click", (e) => {
   for (let btn of document.querySelectorAll(".rps-choice")) {
-    btn.classList.remove("rps-red")
+    btn.classList.remove("rps-red");
   }
   comp = Math.floor(Math.random() * 3) + 1;
   choice = e.target.name;
@@ -31,7 +31,7 @@ rpsList.addEventListener("click", (e) => {
     rpsOutput.textContent = "Нічия";
     rpsOutput.classList.remove("output-green");
     rpsOutput.classList.remove("output-red");
-    rpsOutput.classList.add("output-black")
+    rpsOutput.classList.add("output-black");
   } else if (
     (choice == 1 && comp === 2) ||
     (choice == 2 && comp === 3) ||
@@ -55,7 +55,7 @@ rpsList.addEventListener("click", (e) => {
 rpsBtn.addEventListener("click", (e) => {
   for (let btn of document.querySelectorAll(".rps-choice")) {
     if (btn.name == comp) {
-      btn.classList.add("rps-red")
+      btn.classList.add("rps-red");
     }
   }
 });
@@ -102,7 +102,7 @@ const dinoRetry = document.querySelector(".dino-retry");
 let positionX = 0;
 let anim;
 let isPlaying = false;
-const target = 600
+const target = 560;
 
 function move() {
   if (positionX < target) {
@@ -121,7 +121,7 @@ function move() {
       isPlaying = false;
       dinoOutput.textContent = "Game Over";
       dinoOutput.classList.remove("output-black");
-      dinoOutput.classList.add("output-red")
+      dinoOutput.classList.add("output-red");
       dinoRetry.style.display = "block";
       return;
     }
@@ -171,36 +171,35 @@ dinoRetry.addEventListener("click", () => {
     anim = requestAnimationFrame(move);
     dinoRetry.style.display = "none";
     dinoOutput.textContent = "Press space to jump";
-    dinoOutput.classList.remove("output-red")
-    dinoOutput.classList.add("output-black")
+    dinoOutput.classList.remove("output-red");
+    dinoOutput.classList.add("output-black");
     cactus.style.top = "190px";
-    speed = 7
+    speed = 7;
   }
 });
 //TEAM
-// const teamList = document.querySelector(".team-list");
-// const forw = document.querySelector(".team-forw");
-// const back = document.querySelector(".team-back");
-// let first = 0;
-// forw.addEventListener("click", () => {
-//   teamList.scroll({ left: 330, behavior: "smooth" });
-//   console.log(teamList.scrollLeft);
-//   if (first == teamList.scrollLeft) {
-//     teamList.scroll({ left: 0, behavior: "instant" });
-//     first = 0;
-//   } else {
-//     first = teamList.scrollLeft;
-//   }
-// });
-// back.addEventListener("click", () => {
-//   teamList.scroll({ left: 0, behavior: "smooth" });
-//   if (first == teamList.scrollLeft) {
-//     teamList.scroll({ left: 330, behavior: "instant" });
-//     first = teamList.scrollLeft;
-//   } else {
-//     first = 0;
-//   }
-// });
+const teamList = document.querySelector(".team-list");
+const forw = document.querySelector(".team-forw");
+const back = document.querySelector(".team-back");
+let first = 0;
+forw.addEventListener("click", () => {
+  teamList.scroll({ left: 330, behavior: "smooth" });
+  if (first == teamList.scrollLeft) {
+    teamList.scroll({ left: 0, behavior: "instant" });
+    first = 0;
+  } else {
+    first = teamList.scrollLeft;
+  }
+});
+back.addEventListener("click", () => {
+  teamList.scroll({ left: 0, behavior: "smooth" });
+  if (first == teamList.scrollLeft) {
+    teamList.scroll({ left: 330, behavior: "instant" });
+    first = teamList.scrollLeft;
+  } else {
+    first = 0;
+  }
+});
 //modal
 const backdropFirst = document.querySelector("div[data-modal]");
 const closeBtnFirst = document.querySelector("button[data-modal-close]");
@@ -219,5 +218,94 @@ const modalForm = document.querySelector(".modal-form");
 const outputText = document.querySelector(".header-text").querySelector("span");
 modalForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  outputText.textContent = e.currentTarget.elements.name.value || "User"
+  outputText.textContent = e.currentTarget.elements.name.value || "User";
+});
+//dark theme
+function dark(){
+document.body.classList.add("background");
+document.querySelector(".header").classList.add("background");
+const link = document.querySelectorAll("a");
+const text = document.querySelectorAll("p");
+const subtitle = document.querySelectorAll("h2");
+const modal = document.querySelectorAll(".modal");
+for (let item of modal) {
+  item.classList.add("darker");
+  item.classList.add("border");
+}
+for (let item of document.querySelectorAll("h3")) {
+  item.classList.add("text-white");
+}
+for (let item of subtitle) {
+  item.classList.add("text-white");
+}
+for (let item of link) {
+  item.classList.add("text-white");
+}
+for (let item of text) {
+  item.classList.add("text-white");
+}
+document.querySelector("h1").classList.add("text-white");
+const btn = document.querySelectorAll("button");
+console.log(text);
+for (let b of btn) {
+  b.classList.add("border");
+}
+document.querySelector(".logo-white").style.display = "block";
+document.querySelector(".logo-black").style.display = "none";
+document.querySelector(".white-modal-close").style.display = "block";
+document.querySelector(".black-modal-close").style.display = "none";
+document.querySelector("label").classList.add("text-white");
+document.querySelector(".dino").classList.add("this")
+}
+function light(){
+  document.body.classList.remove("background");
+  document.querySelector(".header").classList.remove("background");
+  const link = document.querySelectorAll("a");
+  const text = document.querySelectorAll("p");
+  const subtitle = document.querySelectorAll("h2");
+  const modal = document.querySelectorAll(".modal");
+  for (let item of modal) {
+    item.classList.remove("darker");
+    item.classList.remove("border");
+  }
+  for (let item of document.querySelectorAll("h3")) {
+    item.classList.remove("text-white");
+  }
+  for (let item of subtitle) {
+    item.classList.remove("text-white");
+  }
+  for (let item of link) {
+    item.classList.remove("text-white");
+  }
+  for (let item of text) {
+    item.classList.remove("text-white");
+  }
+  document.querySelector("h1").classList.remove("text-white");
+  const btn = document.querySelectorAll("button");
+  for (let b of btn) {
+    b.classList.remove("border");
+  }
+  document.querySelector(".logo-white").style.display = "none";
+  document.querySelector(".logo-black").style.display = "block";
+  document.querySelector(".white-modal-close").style.display = "none";
+  document.querySelector(".black-modal-close").style.display = "block";
+  document.querySelector("label").classList.remove("text-white");
+  document.querySelector(".dino").classList.remove("this");
+}
+const darkBtn = document.querySelector(".header-btn");
+let theme = "light"
+darkBtn.addEventListener("click", () => {
+  if (theme === "dark") {
+    darkBtn.classList.remove("header-btn2");
+    document.querySelector(".sun").style.display = "block";
+    document.querySelector(".moon").style.display = "none";
+    theme = "light";
+    light()
+  } else if (theme === "light") {
+    theme = "dark";
+    darkBtn.classList.add("header-btn2");
+    document.querySelector(".sun").style.display = "none";
+    document.querySelector(".moon").style.display = "block";
+    dark()
+  }
 });

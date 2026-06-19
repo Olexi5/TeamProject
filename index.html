@@ -10,28 +10,40 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="./css/sasha.css" />
     <link rel="stylesheet" href="./css/valentyn/valentyn.scss" />
   </head>
-  <body class="no-scroll container">
+  <body class="no-scroll">
     <header class="header">
-      <a href="" class="header-logo"></a>
-      <ul class="header-list"></ul>
-      <button type="button"></button>
+      <a href="#" class="header-logo"><img class="logo-black" src="./images/logo.png" alt=""><img class="logo-white" src="./images/logo-white.png" alt=""></a>
+      <ul class="header-list">
+        <li class="header-item"><a class="header-link" href="#">Інтерактив</a></li>
+        <li class="header-item"><a class="header-link anchor" href="#team">Наша команда</a></li>
+        <li class="header-item"><a class="header-link anchor" href="#footer">Контакти</a></li>
+      </ul>
+      <div class="header-btn-div">
+      <button class="header-btn" type="button"><img class="sun" src="./images/sun.png" alt=""><img class="moon" src="./images/moon.png" alt=""></button>
+      </div>
       <p class="header-text">Вітаємо, <span>User</span>!</p>
     </header>
-    <main>
+    <main class="container">
+      <h1 class="title">Популярні інетрактивні ігри</h1>
       <div class="backdrop" data-modal>
         <div class="modal">
           <button type="button" class="close-btn" data-modal-close>
-            <img class="modal-close" src="./images/cross.png" alt="" />
+            <img class="black-modal-close" src="./images/cross.png" alt="" />
+            <img src="./images/cross-white.png" alt="" class="white-modal-close">
           </button>
           <div class="text">
-          <p class="modal-text">Привіт!</p>
-          <p class="modal-text">Ви потрапили на сайт інтерактивних ігор та завдань</p>
-          <p class="modal-text">Сподіваємось, що вам сподобається і ви отримаєте позитивні емоції!</p>
-          <p class="modal-text">Бажаємо Вам гарно провести час!</p>
+            <p class="modal-text">Привіт!</p>
+            <p class="modal-text">
+              Ви потрапили на сайт інтерактивних ігор та завдань
+            </p>
+            <p class="modal-text">
+              Сподіваємось, що вам сподобається і ви отримаєте позитивні емоції!
+            </p>
+            <p class="modal-text">Бажаємо Вам гарно провести час!</p>
           </div>
           <form action="" class="modal-form">
             <label for="" class="modal-label">Введіть своє ім’я:</label
@@ -52,28 +64,35 @@
       <div class="backdrop sec-backdrop is-hidden">
         <div class="modal sec-modal">
           <button type="button" class="sec-close-btn close-btn">
-            <img class="modal-close" src="./images/cross.png" alt="" />
+            <img class="black-modal-close" src="./images/cross.png" alt="" />
+            <img src="./images/cross-white.png" alt="" class="white-modal-close">
           </button>
           <p class="sec-modal-text">Дякую за підписку!</p>
           <img src="./images/sword.png" class="sec-modal-img1" alt="" />
           <img src="./images/puzzle.png" class="sec-modal-img2" alt="" />
-          <img src="./images/game-development.png" class="sec-modal-img3" alt="" />
+          <img
+            src="./images/game-development.png"
+            class="sec-modal-img3"
+            alt=""
+          />
           <img src="./images/tic-tac-toe.png" class="sec-modal-img4" alt="" />
         </div>
       </div>
       <section class="section year">
         <h2 class="section-title">Перевір в який рік ти народився</h2>
         <div class="year-game">
-        <form action="" class="year-form">
-          <input
-            type="text"
-            class="year-input"
-            placeholder="Введіть рік народження"
-            name="year"
-          />
-          <button class="year-submit" type="submit"><img src="./images/submit.png" alt="" class="year-submit-img"></button>
-        </form>
-        <p class="year-output"></p>
+          <form action="" class="year-form">
+            <input
+              type="text"
+              class="year-input"
+              placeholder="Введіть рік народження"
+              name="year"
+            />
+            <button class="year-submit" type="submit">
+              <img src="./images/submit.png" alt="" class="year-submit-img" />
+            </button>
+          </form>
+          <p class="year-output"></p>
         </div>
       </section>
       <section class="section guess-number">
@@ -92,32 +111,32 @@
       <section class="section rps">
         <h2 class="section-title">Камінь - ножиці - папір</h2>
         <div class="rps-game">
-        <ul class="rps-list">
-          <li class="rps-item">
-            <button type="button" class="rps-choice" name="1">
-              <img src="./images/stone.png" alt="" class="rps-img" name="1" />
-            </button>
-          </li>
-          <li class="rps-item">
-            <button type="button" class="rps-choice" name="2">
-              <img
-                src="./images/scissors.png"
-                alt=""
-                class="rps-img"
-                name="2"
-              />
-            </button>
-          </li>
-          <li class="rps-item">
-            <button type="button" class="rps-choice" name="3">
-              <img src="./images/paper.png" alt="" class="rps-img" name="3" />
-            </button>
-          </li>
-        </ul>
-        <p class="rps-stats">
-          Рахунок: Комп’ютер - <span class="comp-stats">0</span>Ви -
-          <span class="your-stats">0</span>
-        </p>
+          <ul class="rps-list">
+            <li class="rps-item">
+              <button type="button" class="rps-choice" name="1">
+                <img src="./images/stone.png" alt="" class="rps-img" name="1" />
+              </button>
+            </li>
+            <li class="rps-item">
+              <button type="button" class="rps-choice" name="2">
+                <img
+                  src="./images/scissors.png"
+                  alt=""
+                  class="rps-img"
+                  name="2"
+                />
+              </button>
+            </li>
+            <li class="rps-item">
+              <button type="button" class="rps-choice" name="3">
+                <img src="./images/paper.png" alt="" class="rps-img" name="3" />
+              </button>
+            </li>
+          </ul>
+          <p class="rps-stats">
+            Рахунок: Комп’ютер - <span class="comp-stats">0</span> Ви -
+            <span class="your-stats">0</span>
+          </p>
         </div>
         <p class="rps-output"></p>
         <button type="button" class="rps-comp">Варіант комп’ютера</button>
@@ -132,10 +151,18 @@
             placeholder="Введіть число"
           />
           <ul class="calc-list">
-            <li class="calc-item"><button class="calc-btn" type="button">+</button></li>
-            <li class="calc-item"><button class="calc-btn" type="button">*</button></li>
-            <li class="calc-item"><button class="calc-btn" type="button">-</button></li>
-            <li class="calc-item"><button class="calc-btn" type="button">/</button></li>
+            <li class="calc-item">
+              <button class="calc-btn" type="button">+</button>
+            </li>
+            <li class="calc-item">
+              <button class="calc-btn" type="button">*</button>
+            </li>
+            <li class="calc-item">
+              <button class="calc-btn" type="button">-</button>
+            </li>
+            <li class="calc-item">
+              <button class="calc-btn" type="button">/</button>
+            </li>
           </ul>
           <input
             type="text"
@@ -160,19 +187,6 @@
         </form>
         <p class="time-calculator-output"></p>
       </section>
-      <section class="section time-calculator">
-        <h2 class="section title">Калькулятор часу</h2>
-        <form action="" class="time-calculator-form">
-          <input
-            type="number"
-            class="time-calculator-input"
-            placeholder="Введіть секунди"
-            name="timeCalculator"
-          />
-          <button type="submit">тимчасово</button>
-        </form>
-        <p class="time-calculator-output"></p>
-      </section>
       <section class="dino">
         <h2 class="section-title dino-title">Google динозавр</h2>
         <p class="dino-output">Press space to start</p>
@@ -185,11 +199,8 @@
         <button type="button" class="dino-retry">
           <img src="./images/retry.png" alt="" />
         </button>
+        <div class="backr"><img src="./images/dino-back.png" alt=""></div>
       </section>
-
-
-
-      
       <section class="section three-numbers">
         <div class="three-numbers-form">
           <input
@@ -210,12 +221,35 @@
         </div>
         <p class="three-numbers-result">Покищо ви ще не ввели число</p>
       </section>
-
-
-
-
+      <section id="team" class="container team">
+        <h2 class="section-title">Наша команда</h2>
+        <button type="button" class="team-back">
+          <img src="./images/arrow-white.png" alt="" class="team-btn-mg-white">
+        </button>
+        <ul class="team-list">
+          <li class="team-item">
+            <img src="./images/sasha-img.jpg" alt="" class="team-img" />
+            <h3 class="team-name">Ковальська Олександра</h3>
+            <p class="team-descr">
+              Робила секції: високосний рік, камінь-ножиці-папір, калькулятор,
+              гугл-динозаврик, наша команда, модальні вікна
+            </p>
+          </li>
+          <li class="team-item">
+            <img src="./images/valentyn-img.jpg" alt="" class="team-img" />
+            <h3 class="team-name">Валентин Вареник</h3>
+            <p class="team-descr">
+              Робив секції: вгадай число, калькулятор часу, футбол, 3 числа,
+              вчені
+            </p>
+          </li>
+        </ul>
+        <button type="button" class="team-forw">
+          <img src="./images/arrow-white.png" alt="" class="team-btn-mg-white">
+        </button>
+      </section>
     </main>
-    <footer class="footer"></footer>
+    <footer id="footer" class="footer"></footer>
     <script type="module" src="./js/sasha.js"></script>
     <script type="module" src="./js/valentyn.js"></script>
   </body>
