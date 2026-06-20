@@ -11,6 +11,13 @@
   padding: 0 15px;
   margin: 0 auto;
 }
+/* body {
+  background-image: url(../images/backr.jpg);
+  z-index: -2;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
 main {
   position: relative;
 }
@@ -79,6 +86,20 @@ h2.text-white::before {
   letter-spacing: 0%;
   margin-bottom: 36px;
 }
+.img1 {
+  position: absolute;
+  left: -645px;
+}
+.img2 {
+  position: absolute;
+  right: -640px;
+}
+.img1 img {
+  height: 1250px;
+}
+.img2 img {
+  height: 1250px;
+}
 /* header */
 .logo-white {
   display: none;
@@ -87,7 +108,7 @@ h2.text-white::before {
   display: flex;
   align-items: center;
   background-color: var(--white-color);
-  width: 1440px;
+  width: 1450px;
   padding: 21px 175px;
   margin: 0 auto;
 }
@@ -148,12 +169,13 @@ h2.text-white::before {
 }
 .dino {
   position: relative;
+  margin-bottom: 36px;
 }
 .dino-output {
   padding-bottom: 140px;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 400;
-  text-align: center;
+  text-align: right;
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0%;
@@ -582,4 +604,50 @@ h2.text-white::before {
   border: transparent;
   width: 26px;
   height: 25px;
+}
+.footer {
+  display: flex;
+  gap: 186px;
+  background-color: #ffffff;
+  padding: 60px 175px;
+  width: 1440px;
+  margin: 0 auto;
+}
+.footer-text {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  line-height: 170%;
+  letter-spacing: 0%;
+}
+.footer-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.footer-input {
+  padding: 10px 80px 10px 10px;
+  background-color: var(--input-backr);
+  color: var(--input-text);
+  border-radius: 20px;
+  height: 35px;
+  border: none;
+}
+.footer-btn {
+  padding: 10px;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  border-radius: 20px;
+  height: 35px;
+  border: transparent;
+}
+.footer-subtext {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 6px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
