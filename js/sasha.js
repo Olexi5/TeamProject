@@ -149,8 +149,9 @@ function move() {
 }
 
 document.addEventListener("keydown", (e) => {
+  e.preventDefault()
   if (e.code === "Space") {
-    if (dinoOutput.textContent === "Game Over") return;
+    // if (dinoOutput.textContent === "Game Over") return;
     if (isPlaying === "false") {
       return;
     }
@@ -305,12 +306,12 @@ darkBtn.addEventListener("click", () => {
     document.querySelector(".sun").style.display = "block";
     document.querySelector(".moon").style.display = "none";
     theme = "light";
-    light();
+    light()
   } else if (theme === "light") {
     theme = "dark";
     darkBtn.classList.add("header-btn2");
     document.querySelector(".sun").style.display = "none";
     document.querySelector(".moon").style.display = "block";
-    dark();
+    dark()
   }
 });
