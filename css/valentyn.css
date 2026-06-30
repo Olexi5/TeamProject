@@ -1,44 +1,60 @@
 :root {
-  --blck-clr: #000000;
+  --blck-clr: #000;
   --inpt-bcgc: #d7d7d7;
   --game-win: #039900;
-  --wht-clr: #ffffff;
+  --wht-clr: #fff;
   --game-over: #990000;
   --input-txt: #7e7e7e;
-  --ftbll-bcgc: #5ABB58;
+  --ftbll-bcgc: #5abb58;
 }
 
+/*  */
 
+/* . */
 
 /*  */
 
+/* . */
 
-.
+/* football */
 
+.football {
+  margin: 36px 0;
+  margin-left: -67px;
+  position: relative;
+}
 
+.football-box {
+  width: 720px;
+  height: 220px;
+  background: var(--ftbll-bcgc);
+  border: 2px solid var(--blck-clr);
+  border-radius: 37px;
+  position: relative;
+  align-items: center;
+}
+
+.footbal-ball {
+  width: 50px;
+  height: 50px;
+
+  position: absolute;
+  left: 80px;
+  top: 85px;
+
+  transition:
+    left 1s linear,
+    top 1s linear,
+    transform 1s linear;
+
+  user-select: none;
+  pointer-events: none;
+}
 
 /*  */
 
-
-.
-
-
+/* . */
 
 /*  */
 
-
-.
-
-
-
-/*  */
-
-
-.
-
-
-
-/*  */
-
-
-.
+/* . */
